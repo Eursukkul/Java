@@ -1,0 +1,27 @@
+//Write code to convert a given score to grade: A, B, C, D, F.
+//A is at least 80+
+//B is at least 70+
+//C is at least 60+
+//D is at least 50+
+//F is otherwise
+//
+import java.util.Scanner;
+class School{
+    private static char result;
+
+    public static void main(String[] data){
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter score : ");
+    int score = sc.nextInt();
+    result = 'F';
+    if(score >= 50) result = 'D';
+    if(score >= 60) result = 'C';
+    if(score >= 70) result = 'B';
+    if(score >= 80) result = 'A';
+    System.out.println(result);
+
+
+    
+    }
+
+}
