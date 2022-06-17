@@ -1,0 +1,30 @@
+import java.util.Arrays;
+
+/*
+Given a CSV data, 
+Write code to count distnct String 
+"Latte,Mocha,Latte" //2
+"A,B,C,A,C,A,A,A"  //3
+"A,A,A,B,A,A"      //2
+*/
+class KBTG01 {
+    public static void main(String[] args) {
+        String a = "A,B,C,A,C,A,A,A";
+        String [] b = a.split(",");  // remove ","
+        Arrays.sort(b);
+        int count = 1;
+        for (int i = 0; i < b.length-1; i++){
+            if (b[i].equals(b[i+1])){
+                //looking forward
+            }else count++;
+        }
+        
+        /*for (int i= 1; i < b.length; i++){
+            if (b[i-1].equals(b[i])){
+                //looking backward
+            }else count++;
+        }*/
+        System.out.println(count++);
+
+    }
+}
