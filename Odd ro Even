@@ -1,0 +1,42 @@
+// Exercise Write a program to print number from 9 to 0.
+// Exercise Write a program to print number from 0 to 9 with number
+// type: odd or even
+// 0 Even
+// 1 Odd
+// 2 Even
+// 3 Odd
+// 4 Even
+// 5 Odd
+// 6 Even
+// 7 Odd
+// 8 Even
+// 9 Odd
+class Count {
+        public static void main(String[] data) {
+          
+            for (int i = 0; i <= 10; i++) {
+ 
+                // Calling the function and printing
+                // corresponding number is even or odd
+                System.out.println(i + " : " + testOddEven(i));
+            }
+        }
+    
+        public static String testOddEven(int a){
+ 
+        if (a != 0) {
+            if (Integer.toBinaryString(a).endsWith("0")) {
+                return "Even";
+            }
+            else {
+                return "Odd";
+            }
+        }
+ 
+        // Here we will land if
+        // it does not ends with 0
+        else {
+            return "Even";
+        }
+    }
+}    
