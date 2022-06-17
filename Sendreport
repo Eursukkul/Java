@@ -1,0 +1,28 @@
+//  Send the reports to next level
+//  - The level represent to alphabet A B C D .... Z
+//  - Level A can send the report to only Level B, but CANNOT send to level C or higher,
+//    Level B can send the report to only Level C, but CANNOT send to level D or higher
+//  - Example Data structure
+//    [A, B, A, C, C, B, A] Output should return 4
+//    [A, B, C] Output should return 2
+//    [A, C, E] Output should return 0
+   
+class Report{
+      
+    int m3(String list) {
+    char[] a =list.toCharArray(); // create array from A - Z
+    int[] count = new int[26];  // unable to use count['B'] ==> 66
+    for (int i = 0; i < a.length; i++) {
+        int position = a[i] - 'A'; // - 65
+        count[position]++;
+    }
+       int total = 0;
+       for (int i =1; i < count.length; i++) {
+           if (count[i-1] > 0) {
+               total = total + count[i];
+           }
+       }
+       return total;
+    }
+    
+    }
