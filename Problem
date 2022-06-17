@@ -1,0 +1,28 @@
+/*
+Given two integers, A and B we are interested in position at which the decimal representation of 
+A occurs as a SubString in thedecimal representation of B (counting from 0). For example:
+
+-53 occurs in 1953786 at position 2 
+                ^^
+-78 occurs in 195378678 at position 4 and 7
+
+Write a method solution(int A, int B) and returns 
+the leftmost position at which A occurs in B.
+
+This function should re turn -1 if A doest  not occurs in B .
+Give A = 53 and B =1953786
+*/
+class KBTG {
+    public static void main(String[] args) {
+        int p = Solution.find(78, 195378678);
+        System.out.println(p);
+
+    }
+}
+class Solution {
+    static int find(int A, int B){
+        String u = "" + A; // force convert
+        String v = "" + B;
+    return v.indexOf(u);    
+    }
+}
