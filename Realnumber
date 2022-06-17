@@ -1,0 +1,28 @@
+Given a positive real number, write a function to truncate
+// to the lower quarter, e.g. .00, .25, .50, and .75
+// Example:
+// 3.85 ---> 3.75
+// 5.99 ---> 5.75
+// 6.15 ---> 6.00
+import java.util.Scanner;
+class Cashier {
+    public static void main(String[] args) {
+        System.out.print("Price : ");
+        Scanner input = new Scanner(System.in);
+        var price = input.nextDouble();
+        var whole =  (int)price;
+        var demical = price - whole;
+        var result = 0.0;
+        if(demical >= 0.25) result =  0.25;
+        if(demical >= 0.50) result =  0.50;
+        if(demical >= 0.75) result =  0.75;
+        System.out.printf("The final price is: %.2f\n", whole + result);
+
+
+
+
+        
+        
+    }
+    
+}
