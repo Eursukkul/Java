@@ -1,0 +1,33 @@
+class Java {
+     public static void main(String[] args) {
+        int [] input = {3,30,34,5,9};
+
+        // Convert array int to array String
+        String[] str = new String[input.length];
+        for (int i = 0; i < input.length; i++) {
+            str[i] = String.valueOf(input[i]);
+        }
+        
+        String t = str[0];
+        for (int i = 1; i < input.length;i++) {
+            t+=str[i];
+        }
+        //System.out.print(t); //check output String
+        // Convert array String to array Char
+        char [] ch = t.toCharArray();
+        //System.out.print(ch); // check output Char
+        // Sort Array element in descending 
+        for(int i = 0; i < ch.length; i++) {
+            for(int j = i + 1; j < ch.length; j++) {
+                if(ch[i] < ch[j]){
+                    var temp = ch[i];
+                    ch[i] = ch[j];
+                    ch[j] = temp;
+                }
+            }
+        }
+        for (int i = 0; i <= ch.length-1; i++){
+            System.out.print(ch[i]);
+        }
+    }    
+}
