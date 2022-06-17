@@ -1,0 +1,16 @@
+class Number {
+    public static void main(String[] data) {
+      int[] point = { 8, 5, 6, 9, 7, 8 };
+      int i = 0;
+      while (i < point.length) {
+          System.out.print(point[i] + ": ");
+          int j = 0;
+          while (j < point[i]) {
+            System.out.print('o');
+            j++;
+          }
+          System.out.println();
+          i++;
+      }
+    }
+  }
