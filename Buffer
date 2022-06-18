@@ -11,7 +11,7 @@ class Start {
     Solution01 s = new Solution01();
     String w = s.print(size);
     System.out.print(w);
-    /*
+    
     int [] a = {8, 6, 4, 6, 7};
     Arrays.sort(a);
     for (int i = 0; i < a.length; i++){
@@ -24,7 +24,7 @@ class Start {
     //b.add(7);
     Collections.sort(b);
     System.out.println(b);
-    */
+    
 
    }
 }
