@@ -4,27 +4,23 @@ class Pyramid {
 	public static void main(String[] args){
 		Scanner sc = new Scanner(System.in);
 
-		//Taking Rows value from the user
+		//Taking noOfRows value from the user
 
-		System.out.println("How Many Rows You Want In Your Pyramid?");
+		System.out.println("Enter Rows : ");
 
 		int Rows = sc.nextInt();
-
-	
-		System.out.println("Here Is Your Pyramid");
-                int k = 0;
-           
-
+                int j = 0;
+                
 		//Implementing the logic
 
-		for (int i = 1; i <= Rows; i++, k = 0) {
-                    for (int space = 1; space <= Rows - i; space++) {
+		for (int i = 1; i <= Rows; i++, j = 0) {
+                    for (int space = 0; space <= Rows - i; space++) {
                         System.out.print(" ");
                     }
 
-                    while (k != 2 * i - 1) {
+                    while (j != 2 * i - 1) {
                         System.out.print("*");
-                    k++;
+                    j++;
                     }
 
                 System.out.println();
