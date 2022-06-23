@@ -1,0 +1,72 @@
+ class Start {
+	public static void main(String[] data) {
+		/*int[][] t = {
+						{8, 5, 2, 6 },
+						{6, 4, 1, 3 },
+						{7, 8, 3, 7 },
+						{6, 9, 8, 3 },
+						{5, 1, 8, 4 }
+					}; // 5 x 4*/
+		Tool tool = new Tool();
+		int[] R = { 2, 1, 0, 2 };
+		int[] C = { 0, 2, 1, 2 };
+		tool.process(4, R, C);
+	}
+}
+class Tool {
+    void process(int N, int[] R, int [] C) {
+        char[][] board = new char[N][N];
+        for (int r = 0; r < N; r++){
+            for (int c = 0; c < N; c++){
+                board[r][c] = '0'; //48
+            }
+        }
+        for (int i = 0; i < R.length; i++) {
+            int r = R[i];
+            int c = C[i];
+            board[r][c] ='B';
+            
+        }
+        for (int r = 0; r < N; r++) {
+            for (int c = 0; c < N; c++){
+                if (board[r][c] != 'B') {
+                    int count = count( board, r, c);
+                    board[r][c] = (char)(count + '0');
+                }
+            }
+        }
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                System.out.print( board[i][j] );
+            }
+            System.out.println();
+        }
+    }
+    int count(char[][] board, int r, int c) {
+        int bomb = 0;
+        for (int i = -1; i <= 1; i++) {
+            for (int j =-1; j <= 1; j++) {
+                if ( r+i >= 0 && r+i < board.length &&
+                     c+j >= 0 && c+j < board.length    ) {
+                    if (board[r+i][c+j] == 'B') {
+                        bomb++;
+                    }
+                }
+            }
+        }
+                return bomb;
+    }
+    int sumNeighbor(int[][] t, int r, int c) {
+		int result = 0;
+		for (int i = -1; i <= 1; i++) {
+			for (int j = -1; j <= 1; j++) {
+				if (r+i >= 0 && r+i < t.length &&
+					c+j >= 0 && c+j < t[r].length) {
+					result = result + t[r+i][c+j];
+				}
+			}
+		}
+		return result - t[r][c];
+            }
+            
+}
